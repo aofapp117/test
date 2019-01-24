@@ -60,7 +60,7 @@ def delete2(request):
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'polls/delete.html', {
-            'question': question,
+            'question_list': question,
             'error_message': "You didn't select a choice.",
         })
     else:

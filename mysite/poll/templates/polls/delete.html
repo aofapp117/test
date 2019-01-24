@@ -5,6 +5,9 @@
     <title>Delete</title>
 </head>
 <body>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
 <form action="{% url 'polls:delete2' %}" method="post">
     {% csrf_token %}
 {% for Q in question_list %}
@@ -13,7 +16,7 @@
 {% endfor %}
 <hr>
 <input type="submit" value="delete">
-<!--<h1>Hi!!</h1>-->
+
 </form>
 </body>
 </html>
